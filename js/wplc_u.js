@@ -314,33 +314,6 @@ jQuery(function() {
         }
     }, 5000);
 
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        setTimeout(function () {
-            var liveChat4 = jQuery('#wp-live-chat-4');
-            var liveChat = jQuery('#wp-live-chat');
-            if (!liveChat.hasClass('classic')) {
-                jQuery('body').on('click', function (event) {
-                    if (liveChat.hasClass('mobile-active')) {
-                        if (event.target.id !== 'wplc_chatmsg' && event.target.className !== 'wdt-emoji-picker') {
-                            liveChat4.removeClass('is-full-height');
-                        } else {
-                            liveChat4.addClass('is-full-height');
-                        }
-                    }
-                });
-            } else {
-                jQuery('body').on('click', function (event) {
-                    if (liveChat.hasClass('mobile-active')) {
-                        if (event.target.id !== 'wplc_chatmsg' && event.target.className !== 'wdt-emoji-picker') {
-                            liveChat.removeClass('is-full-height');
-                        } else {
-                            liveChat.addClass('is-full-height');
-                        }
-                    }
-                });
-            }
-        }, 500);
-    }
 });
 
 
