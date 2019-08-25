@@ -2131,13 +2131,12 @@ function wplc_filter_control_live_chat_box_html_4th_layer($wplc_settings,$wplc_u
   $ret_msg .= "</div>";
 
   $ret_msg .= "<div id='bleeper_chat_ended' style='display:none;'></div>";
-  $ret_msg .= "<div id='wplc_user_message_div'>";
+  $ret_msg .= "<div id='wplc_user_message_div' style='display: flex;align-items: center;justify-content: space-around;'>";
 
 
   //Editor Controls
   $ret_msg .= apply_filters("wplc_filter_chat_text_editor","");
 
-  $ret_msg .= "<p>";
   $placeholder = __('Type here','wplivechat');
   $ret_msg .= "<textarea type=\"text\" name=\"wplc_chatmsg\" id=\"wplc_chatmsg\" placeholder=\"".$placeholder."\" class='wdt-emoji-bundle-enabled' maxlength='2000'></textarea>";
   if(!isset($wplc_settings['wplc_newtheme'])){ $wplc_settings['wplc_newtheme'] = "theme-2"; }
@@ -2153,8 +2152,8 @@ function wplc_filter_control_live_chat_box_html_4th_layer($wplc_settings,$wplc_u
   $ret_msg .= apply_filters("wplc_filter_chat_upload","");
 
   $ret_msg .= "<input type=\"hidden\" name=\"wplc_cid\" id=\"wplc_cid\" value=\"\" />";
+  $ret_msg .= "<label for='wplc_send_msg'><i class='fa fa-2x fa-paper-plane' style='color: #1A14DB'></i></label>";
   $ret_msg .= "<input id=\"wplc_send_msg\" type=\"button\" value=\"".__("Send", "wplivechat")."\" style=\"display:none;\" />";
-  $ret_msg .= "</p>";
 
   $ret_msg .= function_exists("wplc_emoji_selector_div") ? wplc_emoji_selector_div() : "";
 
